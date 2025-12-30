@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Box, Button, Container, Stack, TextField, Typography} from "@mui/material";
 import { useNavigate, NavigateFunction, Link } from 'react-router-dom';
+import { API_URL } from "../config";
 
 
 const Register: React.FC = () : React.ReactElement => {
@@ -17,7 +18,7 @@ const Register: React.FC = () : React.ReactElement => {
 
         if ((lomakeRef.current?.taloyhtio.value) && (lomakeRef.current?.sahkopostiosoite.value) && (lomakeRef.current?.kayttajatunnus.value) && (lomakeRef.current?.salasana.value)) {
 
-                const yhteys = await fetch("http://localhost:3110/api/auth/register", {
+                const yhteys = await fetch(`${API_URL}api/auth/register`, {
                     method : "POST",
                     headers : {
                         'Content-Type' : 'application/json'

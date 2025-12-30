@@ -6,6 +6,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { getWeek, format } from 'date-fns';
+import { API_URL } from "../config";
 
 interface Kayttaja {
   kayttajatunnus : string
@@ -101,7 +102,7 @@ const Saunavuorot: React.FC<Props> = (props : Props) : React.ReactElement => {
 
       try {
   
-        const yhteys : Response = await fetch("http://localhost:3110/api/saunavuorot/viikot", asetukset);
+        const yhteys : Response = await fetch(`${API_URL}/api/saunavuorot/viikot`, asetukset);
   
         if (yhteys.status === 200) {
   
@@ -154,7 +155,7 @@ const Saunavuorot: React.FC<Props> = (props : Props) : React.ReactElement => {
     
     const apiKutsu = async (metodi? : string, saunavuoro? : Saunavuoro) : Promise<void> => {
       
-      let url : string = "http://localhost:3110/api/saunavuorot";
+      let url : string = `${API_URL}/api/saunavuorot`;
 
    
       let asetukset : fetchAsetukset = { 
@@ -166,7 +167,7 @@ const Saunavuorot: React.FC<Props> = (props : Props) : React.ReactElement => {
 
       if (metodi === "PUT") {
 
-        url = `http://localhost:3110/api/saunavuorot/${valittuVuoro}`;
+        url = `${API_URL}/api/saunavuorot/${valittuVuoro}`;
 
         asetukset = {
           ...asetukset,

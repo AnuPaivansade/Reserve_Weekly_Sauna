@@ -1,6 +1,7 @@
 import { Box, Button, Container, Stack, TextField, Typography } from "@mui/material";
 import React, { Dispatch, SetStateAction, useRef } from "react";
 import { useNavigate, NavigateFunction, Link } from 'react-router-dom';
+import { API_URL } from "../config";
 
 interface Props {
     setToken : Dispatch<SetStateAction<string | null>>
@@ -22,7 +23,7 @@ const Login: React.FC<Props> = (props : Props) : React.ReactElement => {
         e.preventDefault();
 
         if ((lomakeRef.current?.sahkopostiosoite.value) && (lomakeRef.current?.salasana.value)) {
-            const yhteys = await fetch("http://localhost:3110/api/auth/login", {
+            const yhteys = await fetch(`${API_URL}/api/auth/login`, {
                 method : "POST",
                 headers : {
                     'Content-Type' : 'application/json'
