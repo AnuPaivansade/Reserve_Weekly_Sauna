@@ -19,7 +19,7 @@ const checkToken = (req : express.Request, res : express.Response, next : expres
 
         let token : string = req.headers.authorization!.split(" ")[1];
 
-        jwt.verify(token, "Päättötyö_salauslause");
+        jwt.verify(token, process.env.JWT_SECRET as string);
 
         next();
 

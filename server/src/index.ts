@@ -4,13 +4,15 @@ import apiAuthRouter from './routes/apiAuth';
 import apiSaunavuorotRouter from './routes/apiSaunavuorot';
 import virhekasittelija from './errors/virhekasittelija';
 import cors from 'cors';
+import dotenv from "dotenv";
 
+dotenv.config();
 const app : express.Application = express();
 
 const port : number = Number(process.env.PORT) || 3110;
 app.use(express.static(path.resolve(__dirname, "public")));
 
-app.use(cors({origin: "http://localhost:3000"}));
+app.use(cors({origin: process.env.CORS_ORIGIN || "http://localhost:3000"}));
 
 
 app.use("/api/auth", apiAuthRouter);
@@ -28,5 +30,5 @@ app.use((req : express.Request, res : express.Response, next : express.NextFunct
 });
 
 app.listen(port, () => {
-    console.log("Palvelin on käytössä portissa 3110.")
+    console.log("Palvelin on käytössä portissa " + port)
 });

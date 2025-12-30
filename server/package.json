@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "npx nodemon src/index.ts"
+    "start": "npx nodemon src/index.ts",
+    "seed:saunavuorot": "ts-node prisma/scripts/generoisaunavuorot.ts",
+    "build": "npm install && npx prisma generate"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +24,7 @@
     "@types/express": "^5.0.1",
     "cors": "^2.8.5",
     "date-fns": "^4.1.0",
+    "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2"
   }

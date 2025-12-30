@@ -26,7 +26,7 @@ apiAuthRouter.post("/login", async (req : express.Request, res : express.Respons
 
             if (hash === kayttaja?.salasanaHash) {
 
-                let token = jwt.sign({}, "Päättötyö_salauslause");
+                let token = jwt.sign({}, process.env.JWT_SECRET as string);
 
                 res.json({ 
                     token : token, 

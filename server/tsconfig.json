@@ -3,6 +3,8 @@
         "module": "NodeNext",
         "target": "ES2022",
         "moduleResolution": "nodenext",
-        "esModuleInterop": true
-    }
+        "esModuleInterop": true,
+        "outDir": "./dist"
+    },
+    "exclude": ["client", "node_modules"]
 }
