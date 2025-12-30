@@ -1,7 +1,6 @@
 {
-  "name": "sovellusohjelmointi-2-oppimistehtava",
+  "name": "sauna-app",
   "version": "1.0.0",
-  "description": "Tämä on repository Sovellusohjelmointi 2 -opintojakson oppimistehtävän palautukseen.",
   "main": "index.ts",
   "scripts": {
     "start": "npx nodemon src/index.ts"
