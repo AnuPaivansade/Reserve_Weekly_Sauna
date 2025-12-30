@@ -1,0 +1,29 @@
+{
+  "name": "sovellusohjelmointi-2-oppimistehtava",
+  "version": "1.0.0",
+  "description": "Tämä on repository Sovellusohjelmointi 2 -opintojakson oppimistehtävän palautukseen.",
+  "main": "index.ts",
+  "scripts": {
+    "start": "npx nodemon src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.18",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^22.19.3",
+    "nodemon": "^3.1.11",
+    "prisma": "^6.3.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.7.0",
+    "@types/express": "^5.0.1",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

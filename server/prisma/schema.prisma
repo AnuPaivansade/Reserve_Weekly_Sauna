@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Kayttaja {
+  id                    Int           @id @default(autoincrement())
+  taloyhtio             String
+  kayttajatunnus        String
+  sahkopostiosoite      String        
+  salasanaHash          String
+  saunavuorot           Saunavuoro[]
+}
+
+//kayttajatunnus on julkinen nickname (rapun ja asunnon numero), sahkopostiosoitetta käytetään kirjautumiseen. 
+
+model Saunavuoro {
+  id         Int       @id @default(autoincrement())
+  paivamaara DateTime
+  kellonaika String
+  kayttajaId Int?       
+  kayttaja   Kayttaja?  @relation(fields: [kayttajaId], references: [id])
+}
