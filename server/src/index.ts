@@ -5,6 +5,7 @@ import apiSaunavuorotRouter from './routes/apiSaunavuorot';
 import virhekasittelija from './errors/virhekasittelija';
 import cors from 'cors';
 import dotenv from "dotenv";
+import seedIfEmpty from './seed'
 
 dotenv.config();
 const app : express.Application = express();
@@ -29,6 +30,12 @@ app.use((req : express.Request, res : express.Response, next : express.NextFunct
     next();
 });
 
-app.listen(port, () => {
-    console.log("Palvelin on käytössä portissa " + port)
+seedIfEmpty()
+    .then(() => {
+        app.listen(port, () => {
+        console.log(`Palvelin on käytössä portissa ${port}`);
+        });
+    })
+    .catch((err) => {
+        console.error('Virhe seed-funktion ajossa:', err);
 });

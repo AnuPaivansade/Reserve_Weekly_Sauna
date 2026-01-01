@@ -32,6 +32,6 @@ const generoiSaunavuorot = async () : Promise<void> => {
     };
 };
 
-generoiSaunavuorot();
+export default generoiSaunavuorot;
 
 /*Tämä skripti on luotu Chat-GPT:n ja date-fns-kirjaston dokumentaation avulla, erillisenä harjoitustyöstä.*/
