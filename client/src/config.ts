@@ -1,4 +1,4 @@
 // client/src/config.ts
-export const API_URL = import.meta.env.VITE_API_URL;
+export const API_URL = "https://reserve-weekly-sauna-1.onrender.com";
 
 //korvaa tähän uusi osoite, kun oikea url olemassa. 
