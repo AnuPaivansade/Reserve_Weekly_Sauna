@@ -13,7 +13,10 @@ const app : express.Application = express();
 const port : number = Number(process.env.PORT) || 3110;
 app.use(express.static(path.resolve(__dirname, "public")));
 
-app.use(cors({origin: process.env.CORS_ORIGIN || "http://localhost:3000"}));
+app.use(cors({
+    origin: process.env.CORS_ORIGIN?.replace(/\/$/, "") || "http://localhost:3000",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+}));
 
 
 app.use("/api/auth", apiAuthRouter);
