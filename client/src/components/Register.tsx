@@ -18,7 +18,7 @@ const Register: React.FC = () : React.ReactElement => {
 
         if ((lomakeRef.current?.taloyhtio.value) && (lomakeRef.current?.sahkopostiosoite.value) && (lomakeRef.current?.kayttajatunnus.value) && (lomakeRef.current?.salasana.value)) {
 
-                const yhteys = await fetch(`${API_URL}api/auth/register`, {
+                const yhteys = await fetch(`${API_URL}/api/auth/register`, {
                     method : "POST",
                     headers : {
                         'Content-Type' : 'application/json'
