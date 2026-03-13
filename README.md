@@ -13,11 +13,11 @@ How to test:
 1. Open demo application: https://anupaivansade.github.io/Reserve_Weekly_Sauna
 2. In the middle of navigation bar, there's "Rekisteröidy". Click that.
 3. Register as a user.
-  a. Taloyhtiö = As Oy Metsämäki, other's won't work.
-  b. Käyttäjätunnus = Decide your own credential.
-  c. Sähköpostisosoite = Please do not use your actual email address that is in use but rather a dummy address, like NNNN@email.com / MMMM@sahkoposti.com etc.
-  d. Salasana = Please do not use any actual password that is in use but rather make up something for a test purposes.
-  e. Click "Rekisteröidy" so that your user is registered to the database.
+  <br/>a. Taloyhtiö = As Oy Metsämäki, other's won't work.
+  <br/>b. Käyttäjätunnus = Decide your own credential.
+  <br/>c. Sähköpostisosoite = Please do not use your actual email address that is in use but rather a dummy address, like NNNN@email.com / MMMM@sahkoposti.com etc.
+  <br/>d. Salasana = Please do not use any actual password that is in use but rather make up something for a test purposes.
+  <br/>e. Click "Rekisteröidy" so that your user is registered to the database.
 4. Click on the upper right corner "Kirjaudu" and sign in with the email address and password you registered a moment ago.
 5. In the middle of the view, there's a dropdown menu with label "Valitse viikko". Choose one of the weeks.
 6. There will be presented sauna turns for the chosen week, green background and "Ei varattu" indicates that it is still available. Pink background and credential of the booker indicates that turn is already booked to someone else.
@@ -101,4 +101,5 @@ Several ideas emerged during and after developing this project for potential fut
   - Add role-based access (e.g. admin users) for managing sauna schedules and users
 
   - Extend the application into a mobile version, providing a more accessible and convenient experience for users on the go
+
 
